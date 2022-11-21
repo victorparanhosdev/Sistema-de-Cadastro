@@ -3,7 +3,9 @@
   margin: 0;
   box-sizing: border-box;
 }
-
+a{
+  text-decoration: none;
+}
 :root {
   font-size: 62.5%;
   scroll-behavior: smooth;
@@ -43,14 +45,102 @@ h1 {
 }
 
 .menu {
-  border: 1px solid red;
-  
+  margin: 3rem auto;  
 
 }
 
 ul li {
-  
-  display: inline-block;
+  cursor: pointer;
   padding: 1rem;
-  border: 1px solid;
+  border-bottom: 1px solid;
+}
+.sr-only {
+  visibility: hidden;
+  opacity: 0;
+   position: fixed;
+   width: 100vw;
+   height: 100vh;
+   display: grid;
+   place-content: center;
+   background-color: rgba(0, 0, 0, 0.8);
+   top: 0;
+   left: 0;
+   z-index: 1;
+}
+
+.menu.active .sr-only{
+  opacity: 1;
+  visibility: visible;
+}
+
+.ca-pecas {
+  opacity: 0;
+  width: 60rem;
+  background-color: rgb(32, 16, 121);
+  padding: 2rem 1rem;
+  transition: all 400ms;
+  transform: scale(0.8);
+  
+}
+
+.menu.active .ca-pecas{
+  transform: scale(1);
+  opacity: 1;
+ 
+
+}
+
+.caixa-ca {
+  margin: 2rem auto;
+
+}
+.caixa-ca > div {
+  padding: 2rem 0;
+}
+
+.caixa-ca > div input {
+  height: 4rem;
+  width: 100%;
+  padding: 1rem;
+}
+.caixa-ca > div:nth-child(2) input {
+  height: 3rem;
+  width: 20%;
+  
+}
+
+input {
+  outline: none;
+}
+label {
+  text-transform: uppercase;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+}
+
+
+.btn-cancelar, .btn-cadastrar {
+  display: flex;
+  width: 15rem;
+  height: 5rem;
+  justify-content: center;
+  align-items: center;  
+  font-size: 2rem;
+  color: white;
+  text-transform: uppercase;
+  
+}
+
+.btn-cancelar {
+  background-color: red;
+}
+
+.btn-cadastrar {
+  background-color: rgb(77, 165, 42);
+
+}
+.btn-option {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
 }

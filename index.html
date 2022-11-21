@@ -11,17 +11,49 @@
 <body>
 
   <div class="tela-de-cadastro">
-
+    
     <div class="cadastro">
       <h1>Cadastro</h1>
 
       <div class="menu">
-
+        
         <ul>          
-        <li>1.Cadastrar Peças</li>
+        <li onclick="Menu.abrir()">1.Cadastrar Peças</li>
         <li>2.Consultar Peças</li>
         <li>3.Encerrar o Programa</li>
         </ul>
+        <div class="sr-only">
+
+            <div class="ca-pecas">
+              <h1>1.Cadastro de Peças</h1>
+
+              <div class="caixa-ca">
+
+
+                <div>
+                  <label for="caixa-peca">Nome da Peça:</label> <input type="text" name="" id="caixa-peca">
+                </div>
+
+                <div>
+                  <label for="caixa-valor-peca">Valor da Peça</label>
+                  <input type="number" name="" id="caixa-valor-peca">
+                </div>
+
+
+              </div>
+
+              <div class="btn-option">
+                <a onclick="Menu.fechar()" class="btn-cancelar" href="">Cancelar</a>
+                <a onclick="Menu.fechar()" class="btn-cadastrar" href="">Cadastrar</a>
+
+
+              </div>
+
+
+            </div>
+
+
+        </div>
 
       </div>
 
