@@ -6,41 +6,47 @@
 a{
   text-decoration: none;
 }
+
 :root {
+  --color-roxo: #6a27d7;
+}
+html {
   font-size: 62.5%;
   scroll-behavior: smooth;
 }
 
-body {
-  background-color: rgb(178, 178, 178);  
+body {  
   font-size: 1.6rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  
-}
-
-
-.tela-de-cadastro {
   display: grid;
   place-content: center;
   height: 100vh;
+  background: linear-gradient(180deg, black 8%, #6a27d7 500% );
   
 }
 
-.cadastro {
+
+.caixa-principal-de-cadastro {
   border-radius: 2rem;
   padding: 1.5rem 3rem;
   min-width: 32rem;
   width: 98%;
-  background-color: green;
+  background-color: #FFFFFF;
   
 }
 
 
-h1, h2 {
-  color: rgba(255, 255, 255, 0.409);
+h1 {
+  color: var(--color-roxo);
   text-align: center;
   text-transform: uppercase;
   
+  
+}
+.titulo-da-caixa {
+  text-align: center;
+  color: var(--color-roxo);
+  margin-bottom: 2.5rem;
   
 }
 
@@ -49,7 +55,7 @@ h1, h2 {
 
 }
 
-ul {
+.menu ul {
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -57,16 +63,17 @@ ul {
  
 }
 
-ul li {
+.menu ul li {
   cursor: pointer;
   padding: 1rem;
   border-bottom: 1px solid;
+
   
 }
 
-ul li:hover {
-  color: white;
-  border-bottom: 1px solid rgb(255, 255, 255);
+.menu ul li:hover {
+  color: var(--color-roxo);
+  border-bottom: 1px solid var(--color-roxo)
 }
 
 
@@ -84,68 +91,100 @@ ul li:hover {
   z-index: 1;
 }
 
-.menu.active .sr-only{
+.caixa-principal-de-cadastro.active .sr-only{
   opacity: 1;
   visibility: visible;
 }
 
-.ca-pecas {
+.cadastro-de-dados {
   opacity: 0;
-  background-color: rgb(32, 16, 121);
+  background-color: #FFFFFF;
   padding: 2rem;
   transition: all 400ms;
   transform: scale(0.8);
-  border-radius: 2rem;
+  border-radius: 0.5rem;
   
 }
 
-.menu.active .ca-pecas{
+.caixa-principal-de-cadastro.active .cadastro-de-dados{
   transform: scale(1);
   opacity: 1;
  
 
 }
 
-.caixa-de-dados {
- display: flex;
- gap: 2rem;
- padding: 2rem 0;
 
-}
-.caixa-ca button {
+.formulario button {
     padding: 1rem 3rem;
     border-radius: 0.3rem;
-    border: none;
+    border: 1px solid rgb(178, 178, 178);
     outline: none;
     cursor: pointer;
 
-
+ 
 }
-.caixa-ca button:hover {
+
+.formulario button:hover {
  filter: brightness(0.9);
 }
 
+label {
+  font-size: 1.2rem;
+  font-weight: 300;
+ 
+}
 
-.caixa-de-dados > div input {
+
+
+
+.linha-2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2rem 0;
+
+}
+.caixa-sexo, .caixa-idade, .caixa-name {
+  display: flex;
+  gap: 0.8rem;
+  flex-direction: column;
+
+}
+
+.caixa-sexo > div {
+  display: flex;
+  gap: 0.5rem;
+}
+
+
+
+#input-nasc, #input-name {
   height: 4rem;
   padding: 1rem;
   outline: none;
-  border: none;
-  border-radius: 1rem;
-}
-.caixa-de-dados > div:nth-child(2) input {
-  height: 4rem;
-  
+  border: 1px solid #d4d4d4;
+  border-radius: 0.5rem;
+  width: 100%;
+
+
+
 }
 
-#listando-intem{
+
+#input-nasc:focus, #input-name:focus {
+  border: 1px solid var(--color-roxo);
+
+}
+
+
+.listando-intem{
   overflow-y: scroll;
   width: 100%;
   height: 15rem;
   padding: 1rem;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
   margin: 2rem auto;
-  background-color: white;
+  border: 1px solid rgb(178, 178, 178);
 
 }
 .option-lista {
@@ -169,17 +208,7 @@ ul li:hover {
 }
 
 
-input:focus {
-  
-  box-shadow: 0px 0px 1rem rgb(21, 133, 168);
-}
 
-label {
-  text-transform: uppercase;
-  color: white;
-  display: block;
-  margin: 1rem 0;
-}
 
 
 .btn-cancelar, .btn-cadastrar {
@@ -191,25 +220,29 @@ label {
   align-items: center;  
   font-size: 1.6rem;
   color: white;
-  text-transform: uppercase;
-  transition: background-color 0.2s;
+  
+  transition: all 0.2s;
   
 }
 .btn-cancelar:hover{
-  
-  background-color: rgb(255, 66, 66);
+ 
+  box-shadow: 0px 0px 0.5rem var(--color-roxo);
+ 
 }
+
 .btn-cadastrar:hover {
-  background-color: rgb(77, 165, 42);
+  box-shadow: 0px 0px 0.1rem var(--color-roxo);
+ filter: brightness(1.2);
 
 }
 
 .btn-cancelar {
-  background-color: red;
+  border: 1px solid var(--color-roxo);
+  color: var(--color-roxo);
 }
 
 .btn-cadastrar {
-  background-color: green;
+  background-color: var(--color-roxo);
 
 }
 .btn-option {

@@ -1,84 +1,98 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="estilos.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="estilos.css" />
 
-  <title>Sistema de Cadastro</title>
-</head>
-<body>
-
-  <div class="tela-de-cadastro">
-    
-    <div class="cadastro">
+    <title>Sistema de Cadastro</title>
+  </head>
+  <body>
+    <div class="caixa-principal-de-cadastro">
+      <!--Menu-Principal-->
       <h1>Cadastro</h1>
 
       <div class="menu">
-        
-        <ul>          
-        <li onclick="Menu.abrir()">1.Cadastrar Nomes</li>
-        <li>2.Consultar Nomes</li>
-        <li>3.Encerrar o Programa</li>
+        <ul>
+          <li onclick="Menu.abrir()">1.Cadastrar Dados</li>
+          <li>2.Consultar Dados</li>
+          <li>3.Encerrar o Programa</li>
         </ul>
-        <div class="sr-only">
+      </div>
+      <!----------------->
 
-            <div class="ca-pecas">
-              <h2>1-Cadastro de Nomes</h2>
+      <!--Cadastro de Dados-->
+      <div class="sr-only">
+        <div class="cadastro-de-dados">
+          <h2 class="titulo-da-caixa">Cadastro de Dados</h2>
 
-              <div class="caixa-ca">
-
-                <div class="caixa-de-dados">
-
-                  <div>
-                    <label for="caixa-peca">Nome:</label> <input placeholder="Digite o nome completo..." type="text" name="" id="caixa-peca">
-                  </div>
-  
-                  <div>
-                    <label for="caixa-valor-peca">Idade</label>
-                    <input placeholder="00" type="number" name="" id="caixa-valor-peca">
-                  </div>
-
+          <div class="formulario">
+            <div class="caixa-de-dados">
+              
+              <div class="linha-1">
+                
+                <div class="caixa-name">
+                  <label for="input-name">Nome:</label>
+                  <input
+                    placeholder="Digite o nome completo..."
+                    type="text"
+                    name=""
+                    id="input-name"
+                  />
                 </div>
-
-                <button id="btn-adicionar">Adicionar</button>
-
-                <button id="btn-reset" type="reset">Apagar</button>
-
               </div>
 
-              <div class="layout-de-lista">
+              
 
-                <div id="listando-intem">
-
+              <div class="linha-2">
+                
+                
+                <div class="caixa-sexo">
+                  <label for="">Sexo:</label>
+                  <div>
+                    <input
+                    checked
+                    name="sexomf"
+                    id="sex-masc"
+                    type="radio"
+                    />
+                    <label for="sex-masc">Masculino</label>
+                  </div>
+                  
+                  <div>
+                    <input name="sexomf" id="sex-fem" type="radio" />
+                    <label for="sex-fem">Feminino</label>
+                  </div>
                 </div>
                 
-
-
-              </div>
-
-              <div class="btn-option">
-                <a onclick="Menu.fechar()" class="btn-cancelar" href="">Cancelar</a>
-                <a onclick="Menu.concluir()" class="btn-cadastrar" href="">Salvar</a>
-
+                <div class="caixa-idade">
+                  <label for="input-nasc">Data de Nascimento:</label>
+                 <input type="date" name="" id="input-nasc">
+                </div>
 
               </div>
-
-
             </div>
 
+            <button id="btn-adicionar">Adicionar</button>
+            <button id="btn-reset" type="reset">Apagar</button>
+          </div>
 
+          <div class="layout-de-lista">
+            <div class="listando-intem"></div>
+          </div>
+
+          <div class="btn-option">
+            <a onclick="Menu.fechar()" class="btn-cancelar" href="">Cancelar</a>
+            <a onclick="Menu.concluir()" class="btn-cadastrar" href=""
+              >Salvar</a
+            >
+          </div>
         </div>
-
       </div>
-
-
+      <!----------------->
     </div>
 
-  </div> 
-
-
-<script src="js.js"></script>
-</body>
+    <script src="js.js"></script>
+  </body>
 </html>

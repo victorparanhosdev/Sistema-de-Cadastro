@@ -1,21 +1,21 @@
-let botaoMenu = document.querySelector('.menu')
-const caixaDoProduto = document.querySelector('#caixa-peca')
-const caixaDoValor = document.querySelector('#caixa-valor-peca')
+let botaoMenu = document.querySelector('.caixa-principal-de-cadastro')
+const caixaDeNome = document.querySelector('#input-name')
+const caixaDoValor = document.querySelector('#input-nasc')
 
 const botaoAdicionar = document.querySelector('#btn-adicionar')
 const botaoReset = document.querySelector('#btn-reset')
-const listaDeIntem = document.querySelector('#listando-intem')
+const listaDeIntem = document.querySelector('.listando-intem')
 
 let produtos = []
 
 botaoReset.addEventListener('click', ()=> {
     caixaDoValor.value = ''
-    caixaDoProduto.value = ''
+    caixaDeNome.value = ''
     listaDeIntem.innerHTML = ''
 })
 
 botaoAdicionar.addEventListener('click', ()=> {
-    let item1 = caixaDoProduto.value
+    let item1 = caixaDeNome.value
     let item2 = Number(caixaDoValor.value)
     produtos.push(item1, item2)
     let listaAdd = document.createElement('li')
@@ -25,7 +25,7 @@ botaoAdicionar.addEventListener('click', ()=> {
 
     listaDeIntem.appendChild(listaAdd)
     caixaDoValor.value = ''
-    caixaDoProduto.value = ''
+    caixaDeNome.value = ''
 
 
 })
