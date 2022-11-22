@@ -11,14 +11,17 @@
   <body>
     <div class="caixa-principal-de-cadastro">
       <!--Menu-Principal-->
-      <h1>Cadastro</h1>
 
-      <div class="menu">
-        <ul>
-          <li onclick="Menu.abrir()">1.Cadastrar Dados</li>
-          <li>2.Consultar Dados</li>
-          <li>3.Encerrar o Programa</li>
-        </ul>
+      <div class="tela">
+        <h1>Sistema de Cadastro</h1>
+
+        <div class="menu">
+          <ul>
+            <li onclick="Menu.abrir()">1.Cadastrar Dados</li>
+            <li>2.Consultar Dados</li>
+            <li>3.Encerrar o Programa</li>
+          </ul>
+        </div>
       </div>
       <!----------------->
 
@@ -29,9 +32,7 @@
 
           <div class="formulario">
             <div class="caixa-de-dados">
-              
               <div class="linha-1">
-                
                 <div class="caixa-name">
                   <label for="input-name">Nome:</label>
                   <input
@@ -43,50 +44,46 @@
                 </div>
               </div>
 
-              
-
               <div class="linha-2">
-                
-                
                 <div class="caixa-sexo">
                   <label for="">Sexo:</label>
                   <div>
-                    <input
-                    checked
-                    name="sexomf"
-                    id="sex-masc"
-                    type="radio"
-                    />
+                    <input checked name="sexomf" id="sex-masc" type="radio" />
                     <label for="sex-masc">Masculino</label>
                   </div>
-                  
+
                   <div>
                     <input name="sexomf" id="sex-fem" type="radio" />
                     <label for="sex-fem">Feminino</label>
                   </div>
                 </div>
-                
+
                 <div class="caixa-idade">
                   <label for="input-nasc">Data de Nascimento:</label>
-                 <input type="date" name="" id="input-nasc">
+                  <input type="date" name="" id="input-nasc" />
                 </div>
+              </div>
 
+              <div class="linha-3">
+                <button onclick="adicionandoElementoEmLista()" id="btn-adicionar">Adicionar</button>
+                <button onclick="resetandoTodosElementos()" id="btn-reset" type="reset">Apagar</button>
+              </div>
+
+              <div class="linha-4">
+                <div class="listando-intem">
+
+                </div>
               </div>
             </div>
 
-            <button id="btn-adicionar">Adicionar</button>
-            <button id="btn-reset" type="reset">Apagar</button>
-          </div>
-
-          <div class="layout-de-lista">
-            <div class="listando-intem"></div>
-          </div>
-
-          <div class="btn-option">
-            <a onclick="Menu.fechar()" class="btn-cancelar" href="">Cancelar</a>
-            <a onclick="Menu.concluir()" class="btn-cadastrar" href=""
-              >Salvar</a
-            >
+            <div class="btn-option">
+              <a onclick="Menu.fechar()" class="btn-cancelar" href=""
+                >Cancelar</a
+              >
+              <a onclick="Menu.fechar()" class="btn-salvar" href=""
+                >Salvar</a
+              >
+            </div>
           </div>
         </div>
       </div>
