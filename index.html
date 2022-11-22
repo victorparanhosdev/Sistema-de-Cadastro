@@ -18,33 +18,49 @@
       <div class="menu">
         
         <ul>          
-        <li onclick="Menu.abrir()">1.Cadastrar Peças</li>
-        <li>2.Consultar Peças</li>
+        <li onclick="Menu.abrir()">1.Cadastrar Nomes</li>
+        <li>2.Consultar Nomes</li>
         <li>3.Encerrar o Programa</li>
         </ul>
         <div class="sr-only">
 
             <div class="ca-pecas">
-              <h2>1-Cadastro de Peças</h2>
+              <h2>1-Cadastro de Nomes</h2>
 
               <div class="caixa-ca">
 
+                <div class="caixa-de-dados">
 
-                <div>
-                  <label for="caixa-peca">Nome da Peça:</label> <input placeholder="Digite o produto..." type="text" name="" id="caixa-peca">
+                  <div>
+                    <label for="caixa-peca">Nome:</label> <input placeholder="Digite o nome completo..." type="text" name="" id="caixa-peca">
+                  </div>
+  
+                  <div>
+                    <label for="caixa-valor-peca">Idade</label>
+                    <input placeholder="00" type="number" name="" id="caixa-valor-peca">
+                  </div>
+
                 </div>
 
-                <div>
-                  <label for="caixa-valor-peca">Valor da Peça</label>
-                  <input placeholder="R$" type="number" name="" id="caixa-valor-peca">
+                <button id="btn-adicionar">Adicionar</button>
+
+                <button id="btn-reset" type="reset">Apagar</button>
+
+              </div>
+
+              <div class="layout-de-lista">
+
+                <div id="listando-intem">
+
                 </div>
+                
 
 
               </div>
 
               <div class="btn-option">
                 <a onclick="Menu.fechar()" class="btn-cancelar" href="">Cancelar</a>
-                <a onclick="Menu.concluir()" class="btn-cadastrar" href="">Cadastrar</a>
+                <a onclick="Menu.concluir()" class="btn-cadastrar" href="">Salvar</a>
 
 
               </div>
