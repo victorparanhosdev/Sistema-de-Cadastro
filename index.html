@@ -9,7 +9,7 @@
     <title>Sistema de Cadastro</title>
   </head>
   <body>
-    <div class="caixa-principal-de-cadastro active">
+    <div class="caixa-principal-de-cadastro">
       <!--Menu-Principal-->
 
       <div class="tela">
@@ -45,7 +45,6 @@
               </div>
 
               <div class="linha-2">
-
                 <div class="caixa-sexo">
                   <label for="">Sexo:</label>
                   <div>
@@ -66,30 +65,34 @@
               </div>
 
               <div class="linha-3">
-                <button onclick="adicionandoElementoEmLista()" id="btn-adicionar">Adicionar</button>
-                <button onclick="resetandoTodosElementos()" id="btn-reset" type="reset">Apagar</button>
+                <button
+                  onclick="adicionandoElementoEmLista()"
+                  id="btn-adicionar"
+                >
+                  Adicionar
+                </button>
+                <button
+                  onclick="resetandoTodosElementos()"
+                  id="btn-reset"
+                  type="reset"
+                >
+                  Apagar
+                </button>
               </div>
 
               <div class="linha-4">
                 <div class="listando-intem">
-                  
-                <table class="tabela">
-                  <thead>
-                    <tr>
-                      <td>Nome</td>
-                      <td>Idade</td>
-                      <td>Sexo</td>
-                    </tr>
-                  </thead>
-                  <tbody class="tabela-de-lista">
-              
-
-                  </tbody>
-                </table>
-                  
-
+                  <table class="tabela">
+                    <thead>
+                      <tr>
+                        <td>Nome</td>
+                        <td>Idade</td>
+                        <td>Sexo</td>
+                      </tr>
+                    </thead>
+                    <tbody class="tabela-de-lista"></tbody>
+                  </table>
                 </div>
-
               </div>
             </div>
 
@@ -97,9 +100,7 @@
               <a onclick="Menu.fechar()" class="btn-cancelar" href=""
                 >Cancelar</a
               >
-              <a onclick="Menu.fechar()" class="btn-salvar" href=""
-                >Salvar</a
-              >
+              <a onclick="Menu.fechar()" class="btn-salvar" href="">Salvar</a>
             </div>
           </div>
         </div>

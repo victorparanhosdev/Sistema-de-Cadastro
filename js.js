@@ -5,71 +5,75 @@ const dataDeNascimento = document.querySelector('#input-nasc')
 
 const tabelaDeIntem = document.querySelector('.tabela-de-lista')
 
-
-let produtos = [];
-let contagem = 1;
-let anoAtual = new Date().getFullYear();
-let diaAtual = new Date().getDate();
-let mesAtual = new Date().getMonth() + 1;
+let produtos = []
+let contagem = 1
+let anoAtual = new Date().getFullYear()
+let diaAtual = new Date().getDate()
+let mesAtual = new Date().getMonth() + 1
 
 const sexMF = document.getElementsByName('sexomf')
 
-
-
 function resetandoTodosElementos() {
-    dataDeNascimento.value = ''
-    caixaDeNome.value = ''
-    tabelaDeIntem.innerHTML = ''
-    contagem = 1;
+  dataDeNascimento.value = ''
+  caixaDeNome.value = ''
+  tabelaDeIntem.innerHTML = ''
+  contagem = 1
 }
 
-
-
-
 function adicionandoElementoEmLista() {
-    let item1 = caixaDeNome.value
-    let anoSelecionado = Number(dataDeNascimento.value.split("-")[0])
-    //let mesSelecionado = dataDeNascimento.value.split("-")[1]
-    //let diaSelecionado = dataDeNascimento.value.split("-")[2]
-    let calculoDeIdade = (anoAtual - anoSelecionado)
+  let anoSelecionado = Number(dataDeNascimento.value.split('-')[0])
+  let mesSelecionado = Number(dataDeNascimento.value.split('-')[1])
+  let diaSelecionado = Number(dataDeNascimento.value.split('-')[2])
 
-    let Sexo = ''
+  let calculoDeDia = diaAtual - diaSelecionado
+  let calculoDeMes = mesAtual - mesSelecionado
+  let calculoDoAno = anoAtual - anoSelecionado
+  let idade = 0
 
-    if (sexMF[0].checked) {
-        Sexo = "M"
-    } else if (sexMF[1].checked) {
-        Sexo = "F"
+  if (calculoDeMes >= 0) {
+    if (calculoDeDia == 0) {
+      idade = calculoDoAno
+    } else if (calculoDeDia <= 0) {
+      idade = calculoDoAno - 1
+    } else {
+      idade = calculoDoAno
     }
+  }
 
-    produtos.push(item1, calculoDeIdade, Sexo)
-    let listaAdd = document.createElement('tr')
-    listaAdd.innerHTML = ` <tr>
+  if (calculoDeMes < 0) {
+    idade = calculoDoAno - 1
+  }
+
+  let item1 = caixaDeNome.value
+  let Sexo
+  let sex
+  if (sexMF[0].checked) {
+    Sexo = 'M'
+    sex = 'Masculino'
+  } else if (sexMF[1].checked) {
+    Sexo = 'F'
+    sex = 'Feminino'
+  }
+
+  produtos.push(item1, idade, sex)
+  let listaAdd = document.createElement('tr')
+  listaAdd.innerHTML = ` <tr>
     <td id="tabela-nome">${contagem}. ${item1}</td>
-    <td id="tabela-idade">${calculoDeIdade}</td>
+    <td id="tabela-idade">${idade}</td>
     <td id="tabela-sexo">${Sexo}</td>
   </tr>`
 
-    tabelaDeIntem.appendChild(listaAdd)
-    dataDeNascimento.value = ''
-    caixaDeNome.value = ''
-    contagem++
-
-
-
+  tabelaDeIntem.appendChild(listaAdd)
+  dataDeNascimento.value = ''
+  caixaDeNome.value = ''
+  contagem++
 }
-
-
 
 const Menu = {
-    abrir() {
-        botaoMenu.classList.add('active')
-    },
-    fechar() {
-        botaoMenu.classList.remove('active')
-    },
+  abrir() {
+    botaoMenu.classList.add('active')
+  },
+  fechar() {
+    botaoMenu.classList.remove('active')
+  }
 }
-
-
-
-
-
