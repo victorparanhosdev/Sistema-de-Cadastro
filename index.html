@@ -28,7 +28,7 @@
       <!--Cadastro de Dados-->
       <div class="sr-only">
         <div class="cadastro-de-dados">
-          <h2 class="titulo-da-caixa">Cadastro de Dados</h2>
+          <h2 class="titulo-da-caixa">Cadastro</h2>
 
           <div class="formulario">
             <div class="caixa-de-dados">
@@ -97,14 +97,23 @@
             </div>
 
             <div class="btn-option">
-              <a onclick="Menu.fechar()" class="btn-cancelar" href=""
-                >Cancelar</a
+              <button type="button" onclick="Menu.fechar()" class="btn-cancelar"
+                >Cancelar</button
               >
-              <a onclick="Menu.fechar()" class="btn-salvar" href="">Salvar</a>
+              <button type="button" onclick="Menu.salvar()" class="btn-salvar">Salvar</button>
             </div>
           </div>
         </div>
       </div>
+
+      <div class="sr-only-2">
+        <div class="caixa-ok">
+          <h3>Salvo com sucesso</h3>
+
+          <button type="button" onclick="Menu.ok()" class="btn-salvar">OK</button>
+        </div>
+      </div>
+      
       <!----------------->
     </div>
     <footer>&copy; VictorParanhos</footer>

@@ -33,7 +33,7 @@ h1 {
   text-align: center;
   color: var(--color-roxo);
   margin-bottom: 2.5rem;
-  font-size: 2rem;
+  font-size: 2.5rem;
   text-transform: uppercase;
   border-bottom: 1px solid rgb(175, 175, 175);
   padding-bottom: 1.2rem;
@@ -76,7 +76,7 @@ h1 {
   border-left: 0.5rem solid var(--color-roxo);
 }
 
-.sr-only {
+.sr-only, .sr-only-2 {
   visibility: hidden;
   opacity: 0;
   position: fixed;
@@ -85,10 +85,20 @@ h1 {
   background-color: rgba(0, 0, 0, 0.8);
   top: 0;
   left: 0;
+
+}
+.sr-only{
   z-index: 1;
+}
+.sr-only-2 {
+  z-index: 2;
 }
 
 .caixa-principal-de-cadastro.active .sr-only {
+  opacity: 1;
+  visibility: visible;
+}
+.caixa-principal-de-cadastro.active.confirmacao .sr-only-2 {
   opacity: 1;
   visibility: visible;
 }
@@ -108,6 +118,32 @@ h1 {
   transform: scale(1);
   opacity: 1;
 }
+
+
+.caixa-ok {
+  opacity: 0;
+  visibility: hidden;
+  width: 80vw;
+  margin: 5rem auto;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  text-transform: uppercase;
+  transform: scale(0.8);
+  transition: all 0.4s;
+}
+
+.caixa-principal-de-cadastro.active.confirmacao .caixa-ok {
+  transform: scale(1);
+  opacity: 1;
+  visibility: visible;
+}
+
+
 
 #btn-adicionar,
 #btn-reset {
@@ -172,11 +208,13 @@ label {
   border: 1px solid rgb(178, 178, 178);
 }
 .tabela tr td {
-  background-color: #6a27d7;
-  color: white;
+  color: #6a27d7;
+  font-weight: 700;
   padding: 0.5rem;
   font-size: 1rem;
   text-transform: uppercase;
+  border: 1px solid #6a27d75f;
+  background-color: #e1e1e1;
 }
 .tabela tr td + td {
   text-align: center;
@@ -188,10 +226,12 @@ label {
 #tabela-nome,
 #tabela-idade,
 #tabela-sexo {
+  font-weight: 500;
   background-color: transparent;
   color: black;
-  border: 1px solid rgb(178, 178, 178);
+  border: 1px solid #6a27d75f;
 }
+
 
 .btn-cancelar,
 .btn-salvar {

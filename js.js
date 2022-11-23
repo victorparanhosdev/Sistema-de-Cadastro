@@ -5,6 +5,8 @@ const dataDeNascimento = document.querySelector('#input-nasc')
 
 const tabelaDeIntem = document.querySelector('.tabela-de-lista')
 
+
+
 let produtos = []
 let contagem = 1
 let anoAtual = new Date().getFullYear()
@@ -28,25 +30,22 @@ function adicionandoElementoEmLista() {
   let calculoDeDia = diaAtual - diaSelecionado
   let calculoDeMes = mesAtual - mesSelecionado
   let calculoDoAno = anoAtual - anoSelecionado
-  let idade = 0
+  let idade
 
   if (calculoDeMes >= 0) {
-    if (calculoDeDia == 0) {
+    if (calculoDeDia >= 0) {
       idade = calculoDoAno
-    } else if (calculoDeDia <= 0) {
-      idade = calculoDoAno - 1
     } else {
-      idade = calculoDoAno
+      idade = calculoDoAno - 1
     }
-  }
-
-  if (calculoDeMes < 0) {
+  } else {
     idade = calculoDoAno - 1
   }
 
   let item1 = caixaDeNome.value
   let Sexo
   let sex
+
   if (sexMF[0].checked) {
     Sexo = 'M'
     sex = 'Masculino'
@@ -67,13 +66,23 @@ function adicionandoElementoEmLista() {
   dataDeNascimento.value = ''
   caixaDeNome.value = ''
   contagem++
+  alert(produtos)
 }
 
 const Menu = {
   abrir() {
     botaoMenu.classList.add('active')
   },
+
+  ok(){
+    botaoMenu.classList.remove('confirmacao')
+  },
   fechar() {
+   
     botaoMenu.classList.remove('active')
+  },
+  salvar(){
+    botaoMenu.classList.add('confirmacao')
+    
   }
 }
