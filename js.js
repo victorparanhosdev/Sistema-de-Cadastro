@@ -1,34 +1,49 @@
-let botaoMenu = document.querySelector('.caixa-principal-de-cadastro')
+const botaoMenu = document.querySelector('.caixa-principal-de-cadastro')
 
-let caixaDeNome = document.querySelector('#input-name')
-let dataDeNascimento = document.querySelector('#input-nasc')
+const caixaDeNome = document.querySelector('#input-name')
+const dataDeNascimento = document.querySelector('#input-nasc')
 
-let listaDeIntem = document.querySelector('.listando-intem')
-
+const tabelaDeIntem = document.querySelector('.tabela-de-lista')
 
 
 let produtos = []
-
+let contagem = 1;
 
 
 function resetandoTodosElementos() {
-    caixaDoValor.value = ''
+    dataDeNascimento.value = ''
     caixaDeNome.value = ''
-    listaDeIntem.innerHTML = ''
+    tabelaDeIntem.innerHTML = ''
+    contagem = 1;
 }
+
+
+let anoAtual = new Date().getFullYear();
+let diaAtual = new Date().getDate();
+
+console.log(diaAtual)
 
 function adicionandoElementoEmLista() {
     let item1 = caixaDeNome.value
     let item2 = dataDeNascimento.value
-    produtos.push(item1, item2)
-    let listaAdd = document.createElement('li')
-    listaAdd.classList.add('option-lista')
-    listaAdd.innerHTML = `
-    <span class="span1">NOME:</span> ${item1} <span class="span1">IDADE:</span> <span class="span2">${item2} Anos</span>`
+    let calculoDeIdade = (item2) -
+
     
-    listaDeIntem.appendChild(listaAdd)
-    caixaDoValor.value = ''
+
+    produtos.push(item1, item2)
+    let listaAdd = document.createElement('tr')
+    
+    listaAdd.innerHTML = ` <tr>
+    <td id="tabela-nome">${contagem}. ${item1}</td>
+    <td id="tabela-idade"></td>
+    <td id="tabela-sexo"></td>
+  </tr>`
+    
+    tabelaDeIntem.appendChild(listaAdd)
+    dataDeNascimento.value = ''
     caixaDeNome.value = ''
+    contagem++    
+    
 }
 
 
