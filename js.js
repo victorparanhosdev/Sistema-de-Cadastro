@@ -6,8 +6,14 @@ const dataDeNascimento = document.querySelector('#input-nasc')
 const tabelaDeIntem = document.querySelector('.tabela-de-lista')
 
 
-let produtos = []
+let produtos = [];
 let contagem = 1;
+let anoAtual = new Date().getFullYear();
+let diaAtual = new Date().getDate();
+let mesAtual = new Date().getMonth() + 1;
+
+const sexMF = document.getElementsByName('sexomf')
+
 
 
 function resetandoTodosElementos() {
@@ -18,32 +24,38 @@ function resetandoTodosElementos() {
 }
 
 
-let anoAtual = new Date().getFullYear();
-let diaAtual = new Date().getDate();
 
-console.log(diaAtual)
 
 function adicionandoElementoEmLista() {
     let item1 = caixaDeNome.value
-    let item2 = dataDeNascimento.value
-    let calculoDeIdade = (item2) -
+    let anoSelecionado = Number(dataDeNascimento.value.split("-")[0])
+    //let mesSelecionado = dataDeNascimento.value.split("-")[1]
+    //let diaSelecionado = dataDeNascimento.value.split("-")[2]
+    let calculoDeIdade = (anoAtual - anoSelecionado)
 
-    
+    let Sexo = ''
 
-    produtos.push(item1, item2)
+    if (sexMF[0].checked) {
+        Sexo = "M"
+    } else if (sexMF[1].checked) {
+        Sexo = "F"
+    }
+
+    produtos.push(item1, calculoDeIdade, Sexo)
     let listaAdd = document.createElement('tr')
-    
     listaAdd.innerHTML = ` <tr>
     <td id="tabela-nome">${contagem}. ${item1}</td>
-    <td id="tabela-idade"></td>
-    <td id="tabela-sexo"></td>
+    <td id="tabela-idade">${calculoDeIdade}</td>
+    <td id="tabela-sexo">${Sexo}</td>
   </tr>`
-    
+
     tabelaDeIntem.appendChild(listaAdd)
     dataDeNascimento.value = ''
     caixaDeNome.value = ''
-    contagem++    
-    
+    contagem++
+
+
+
 }
 
 
