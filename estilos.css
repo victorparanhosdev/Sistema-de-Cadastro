@@ -267,6 +267,7 @@ label {
 .btn-cancelar {
   border: 1px solid var(--color-roxo);
   color: var(--color-roxo);
+  background: white;
 }
 
 .btn-salvar {
