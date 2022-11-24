@@ -60,7 +60,7 @@
 
                 <div class="caixa-idade">
                   <label for="input-nasc">Data de Nascimento:</label>
-                  <input type="date" name="" id="input-nasc" />
+                  <input min="1920-01-01"type="date" name="" id="input-nasc" />
                 </div>
               </div>
 
@@ -90,7 +90,8 @@
                         <td>Sexo</td>
                       </tr>
                     </thead>
-                    <tbody class="tabela-de-lista"></tbody>
+                    <tbody class="tabela-de-lista">
+                    </tbody>
                   </table>
                 </div>
               </div>
@@ -105,10 +106,11 @@
           </div>
         </div>
       </div>
+      
 
       <div class="sr-only-2">
         <div class="caixa-ok">
-          <h3>Salvo com sucesso</h3>
+          <p class="salvo-comsuc">Salvo com sucesso</p>
 
           <button type="button" onclick="Menu.ok()" class="btn-salvar">OK</button>
         </div>

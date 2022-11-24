@@ -5,7 +5,31 @@ const dataDeNascimento = document.querySelector('#input-nasc')
 
 const tabelaDeIntem = document.querySelector('.tabela-de-lista')
 
+const sexMF = document.getElementsByName('sexomf')
+let tbody = document.querySelector(".tabela-de-lista")
 
+const Menu = {
+
+  abrir() {
+    botaoMenu.classList.add('active')
+  },
+  
+  ok(){
+    botaoMenu.classList.remove('confirmacao')
+    botaoMenu.classList.remove('active')
+  },
+  fechar() {
+   
+    botaoMenu.classList.remove('active')
+  },
+  salvar(){
+    
+    botaoMenu.classList.add('confirmacao')
+    
+    
+  }
+
+}
 
 let produtos = []
 let contagem = 1
@@ -13,7 +37,7 @@ let anoAtual = new Date().getFullYear()
 let diaAtual = new Date().getDate()
 let mesAtual = new Date().getMonth() + 1
 
-const sexMF = document.getElementsByName('sexomf')
+
 
 function resetandoTodosElementos() {
   dataDeNascimento.value = ''
@@ -22,7 +46,12 @@ function resetandoTodosElementos() {
   contagem = 1
 }
 
+
+
 function adicionandoElementoEmLista() {
+
+
+
   let anoSelecionado = Number(dataDeNascimento.value.split('-')[0])
   let mesSelecionado = Number(dataDeNascimento.value.split('-')[1])
   let diaSelecionado = Number(dataDeNascimento.value.split('-')[2])
@@ -42,9 +71,10 @@ function adicionandoElementoEmLista() {
     idade = calculoDoAno - 1
   }
 
-  let item1 = caixaDeNome.value
-  let Sexo
-  let sex
+
+  let nome = caixaDeNome.value
+  let Sexo;
+  let sex;
 
   if (sexMF[0].checked) {
     Sexo = 'M'
@@ -54,35 +84,38 @@ function adicionandoElementoEmLista() {
     sex = 'Feminino'
   }
 
-  produtos.push(item1, idade, sex)
-  let listaAdd = document.createElement('tr')
-  listaAdd.innerHTML = ` <tr>
-    <td id="tabela-nome">${contagem}. ${item1}</td>
-    <td id="tabela-idade">${idade}</td>
-    <td id="tabela-sexo">${Sexo}</td>
-  </tr>`
+  let Nomeconvertido = Number(nome)
+  if(nome == '' || dataDeNascimento.value == ''){
+    alert('Por favor preencher todos os dados')
+  
+  
+  }else if(Nomeconvertido === Nomeconvertido){
+    alert('Não é Permitido Números')
+    
+  }else {
+    let listaAdd = document.createElement('tr')
+    listaAdd.innerHTML = ` <tr>
+      <td id="tabela-nome">${contagem}. ${nome}</td>
+      <td id="tabela-idade">${idade}</td>
+      <td id="tabela-sexo">${Sexo}</td>
+    </tr>`
+    produtos.push(nome, idade, sex)
+    tabelaDeIntem.appendChild(listaAdd)
+    contagem++
+  }
 
-  tabelaDeIntem.appendChild(listaAdd)
+  
   dataDeNascimento.value = ''
   caixaDeNome.value = ''
-  contagem++
-  alert(produtos)
+
+
+
+
 }
 
-const Menu = {
-  abrir() {
-    botaoMenu.classList.add('active')
-  },
 
-  ok(){
-    botaoMenu.classList.remove('confirmacao')
-  },
-  fechar() {
-   
-    botaoMenu.classList.remove('active')
-  },
-  salvar(){
-    botaoMenu.classList.add('confirmacao')
-    
-  }
-}
+
+
+
+
+
